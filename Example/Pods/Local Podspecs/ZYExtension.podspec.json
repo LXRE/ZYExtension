@@ -1,0 +1,22 @@
+{
+  "name": "ZYExtension",
+  "version": "0.1.0",
+  "summary": "A short description of ZYExtension.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/LXRE/ZYExtension",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Lx921023": "605218422@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/LXRE/ZYExtension.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ZYExtension/Classes/**/*"
+}

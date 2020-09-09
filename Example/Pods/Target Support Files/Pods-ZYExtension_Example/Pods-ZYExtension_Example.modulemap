@@ -1,0 +1,6 @@
+framework module Pods_ZYExtension_Example {
+  umbrella header "Pods-ZYExtension_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
