@@ -9,4 +9,8 @@
 #define Header_h
 #import "UIColor+Category.h"
 #import "NSDate+Category.h"
+#import "NSString+Category.h"
+#import "UIView+ChainProgramming.h"
+#import "UILabel+ChainProgramming.h"
+#import "UIButton+ChainProgramming.h"
 #endif /* Header_h */

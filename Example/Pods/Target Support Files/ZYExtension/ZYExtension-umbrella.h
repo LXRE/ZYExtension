@@ -11,7 +11,11 @@
 #endif
 
 #import "NSDate+Category.h"
+#import "NSString+Category.h"
+#import "UIButton+ChainProgramming.h"
 #import "UIColor+Category.h"
+#import "UILabel+ChainProgramming.h"
+#import "UIView+ChainProgramming.h"
 #import "ZYExtension.h"
 
 FOUNDATION_EXPORT double ZYExtensionVersionNumber;
