@@ -1,9 +1,5 @@
 # ZYExtension
 
-[![CI Status](https://img.shields.io/travis/lixian/ZYExtension.svg?style=flat)](https://travis-ci.org/lixian/ZYExtension)
-[![Version](https://img.shields.io/cocoapods/v/ZYExtension.svg?style=flat)](https://cocoapods.org/pods/ZYExtension)
-[![License](https://img.shields.io/cocoapods/l/ZYExtension.svg?style=flat)](https://cocoapods.org/pods/ZYExtension)
-[![Platform](https://img.shields.io/cocoapods/p/ZYExtension.svg?style=flat)](https://cocoapods.org/pods/ZYExtension)
 
 ## Example
 
