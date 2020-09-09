@@ -7,7 +7,7 @@
 //
 
 #import "ZYViewController.h"
-
+#import <ZYExtension.h>
 @interface ZYViewController ()
 
 @end
@@ -18,6 +18,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    UIView *v=[[UIView alloc]initWithFrame:CGRectMake(20, 200, 100, 100)];
+    v.backgroundColor=[UIColor colorWithHexString:@"#000000" alpha:1];
+    [self.view addSubview:v];
+
 }
 
 - (void)didReceiveMemoryWarning
