@@ -41,6 +41,8 @@
 
 ```ruby
 pod 'ZYExtension',:git => 'https://github.com/LXRE/ZYExtension.git'
+引用
+    #import <ZYExtension.h>
 ```
 ## Content
 ```
