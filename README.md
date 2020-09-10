@@ -20,8 +20,8 @@
 pod 'ZYExtension',:git => 'https://github.com/LXRE/ZYExtension.git'
 ```
 ## Content
-
-```1.控件链式编程;
+```
+1.控件链式编程;
 2.时间格式化;
 3.常用编解码 base64,md5,des加解密，判断手机号、email;
 4.颜色类别，十六进制颜色;
