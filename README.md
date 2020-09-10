@@ -31,7 +31,12 @@
     NSString *md5Str=str.toMD5ForLower32BateString();
     //十六进制颜色
     UIColor *color=UIColor.colorWithHexString(@"#ffffff");
-    
+    //是否是银行卡
+    BOOL isBankCard= str.IsBankCard();
+    //是否是Email
+    BOOL isEmail=str.IsEmailAdress();
+    //是否是手机号
+    BOOL isPhoneNum=str.IsPhoneNumber();
 ## Installation
 
 ```ruby

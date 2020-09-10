@@ -9,21 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (Category)
-/// 验证手机号是否正确
-/// @param number 手机号
-+ (BOOL)IsPhoneNumber:(NSString *)number;
+///BOOL 验证手机号是否正确(void)
+- (BOOL(^)(void))IsPhoneNumber;
 
-/// 验证邮箱是否正确
-/// @param Email Email
-+ (BOOL) IsEmailAdress:(NSString *)Email;
+/// BOOL 验证邮箱是否正确(void)
+- (BOOL(^)(void))IsEmailAdress;
 
-/// 验证身份证是否正确
-/// @param IDCardNumber 身份证
-+ (BOOL) IsIdentityCard:(NSString *)IDCardNumber;
+/// BOOL 验证身份证是否正确(void)
+- (BOOL(^)(void))IsIdentityCard;
 
-/// 验证银行卡是否正确
-/// @param cardNumber 银行卡号
-+ (BOOL) IsBankCard:(NSString *)cardNumber;
+/// BOOL验证银行卡是否正确(void)
+- (BOOL(^)(void))IsBankCard;
 
 /// 根据身份证返回岁数
 - (NSString *(^)(void))ageFromIDCard;

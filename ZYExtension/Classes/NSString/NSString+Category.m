@@ -11,109 +11,129 @@
 
 @implementation NSString (Category)
 
-+ (BOOL) IsPhoneNumber:(NSString *)number {
-    if (number.length != 11)
-    {
-        return NO;
-    }
-    /**
-     * 手机号码:
-     * 13[0-9], 14[5,7], 15[0, 1, 2, 3, 5, 6, 7, 8, 9], 17[6, 7, 8], 18[0-9], 170[0-9]
-     * 移动号段: 134,135,136,137,138,139,150,151,152,157,158,159,182,183,184,187,188,147,178,1705
-     * 联通号段: 130,131,132,155,156,185,186,145,176,1709
-     * 电信号段: 133,153,180,181,189,177,1700
-     */
-    NSString *MOBILE = @"^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|9[0-9]|7[0678])\\d{8}$";
-    /**
-     * 中国移动：China Mobile
-     * 134,135,136,137,138,139,150,151,152,157,158,159,182,183,184,187,188,147,178,1705
-     */
-    NSString *CM = @"(^1(3[4-9]|4[7]|5[0-27-9]|7[8]|8[2-478])\\d{8}$)|(^1705\\d{7}$)";
-    /**
-     * 中国联通：China Unicom
-     * 130,131,132,155,156,166,185,186,145,176,1709
-     */
-    NSString *CU = @"(^1(3[0-2]|4[5]|5[56]|6[6]|7[6]|8[56])\\d{8}$)|(^1709\\d{7}$)";
-    /**
-     * 中国电信：China Telecom
-     * 133,153,180,181,189,177,1700
-     */
-    NSString *CT = @"(^1(33|53|77|8[019])\\d{8}$)|(^1700\\d{7}$)";
-    /**
-     25     * 大陆地区固话及小灵通
-     26     * 区号：010,020,021,022,023,024,025,027,028,029
-     27     * 号码：七位或八位
-     28     */
-    //  NSString * PHS = @"^(0[0-9]{2})\\d{8}$|^(0[0-9]{3}(\\d{7,8}))$";
-    NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
-    NSPredicate *regextestcm = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CM];
-    NSPredicate *regextestcu = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CU];
-    NSPredicate *regextestct = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CT];
-    if (([regextestmobile evaluateWithObject:number] == YES)
-        || ([regextestcm evaluateWithObject:number] == YES)
-        || ([regextestct evaluateWithObject:number] == YES)
-        || ([regextestcu evaluateWithObject:number] == YES))
-    {
-        return YES;
-    }
-    else
-    {
-        return NO;
-    }
-}
-
-+ (BOOL) IsEmailAdress:(NSString *)Email {
-    NSString *emailCheck = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",emailCheck];
-    return [emailTest evaluateWithObject:Email];
-}
-
-+ (BOOL) IsIdentityCard:(NSString *)IDCardNumber {
-    if (IDCardNumber.length <= 0) {
-        return NO;
-    }
-    NSString *regex2 = @"^(\\d{14}|\\d{17})(\\d|[xX])$";
-    NSPredicate *identityCardPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex2];
-    return [identityCardPredicate evaluateWithObject:IDCardNumber];
-}
-
-+ (BOOL) IsBankCard:(NSString *)cardNumber {
-    if(cardNumber.length==0)
-    {
-        return NO;
-    }
-    NSString *digitsOnly = @"";
-    char c;
-    for (int i = 0; i < cardNumber.length; i++)
-    {
-        c = [cardNumber characterAtIndex:i];
-        if (isdigit(c))
+- (BOOL(^)(void))IsPhoneNumber{
+    return ^{
+        NSString *number=self;
+        if (number.length != 11)
         {
-            digitsOnly =[digitsOnly stringByAppendingFormat:@"%c",c];
+            return NO;
         }
-    }
-    int sum = 0;
-    int digit = 0;
-    int addend = 0;
-    BOOL timesTwo = false;
-    for (NSInteger i = digitsOnly.length - 1; i >= 0; i--)
-    {
-        digit = [digitsOnly characterAtIndex:i] - '0';
-        if (timesTwo)
+        /**
+         * 手机号码:
+         * 13[0-9], 14[5,7], 15[0, 1, 2, 3, 5, 6, 7, 8, 9], 17[6, 7, 8], 18[0-9], 170[0-9]
+         * 移动号段: 134,135,136,137,138,139,150,151,152,157,158,159,182,183,184,187,188,147,178,1705
+         * 联通号段: 130,131,132,155,156,185,186,145,176,1709
+         * 电信号段: 133,153,180,181,189,177,1700
+         */
+        NSString *MOBILE = @"^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|9[0-9]|7[0678])\\d{8}$";
+        /**
+         * 中国移动：China Mobile
+         * 134,135,136,137,138,139,150,151,152,157,158,159,182,183,184,187,188,147,178,1705
+         */
+        NSString *CM = @"(^1(3[4-9]|4[7]|5[0-27-9]|7[8]|8[2-478])\\d{8}$)|(^1705\\d{7}$)";
+        /**
+         * 中国联通：China Unicom
+         * 130,131,132,155,156,166,185,186,145,176,1709
+         */
+        NSString *CU = @"(^1(3[0-2]|4[5]|5[56]|6[6]|7[6]|8[56])\\d{8}$)|(^1709\\d{7}$)";
+        /**
+         * 中国电信：China Telecom
+         * 133,153,180,181,189,177,1700
+         */
+        NSString *CT = @"(^1(33|53|77|8[019])\\d{8}$)|(^1700\\d{7}$)";
+        /**
+         25     * 大陆地区固话及小灵通
+         26     * 区号：010,020,021,022,023,024,025,027,028,029
+         27     * 号码：七位或八位
+         28     */
+        //  NSString * PHS = @"^(0[0-9]{2})\\d{8}$|^(0[0-9]{3}(\\d{7,8}))$";
+        NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
+        NSPredicate *regextestcm = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CM];
+        NSPredicate *regextestcu = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CU];
+        NSPredicate *regextestct = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CT];
+        if (([regextestmobile evaluateWithObject:number] == YES)
+            || ([regextestcm evaluateWithObject:number] == YES)
+            || ([regextestct evaluateWithObject:number] == YES)
+            || ([regextestcu evaluateWithObject:number] == YES))
         {
-            addend = digit * 2;
-            if (addend > 9) {
-                addend -= 9;
+            return YES;
+        }
+        else
+        {
+            return NO;
+        }
+    };
+    
+}
+
+- (BOOL(^)(void))IsEmailAdress{
+    return ^{
+        NSString *emailCheck = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+        NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",emailCheck];
+        return [emailTest evaluateWithObject:self];
+    };
+    
+}
+
+- (BOOL(^)(void))IsIdentityCard {
+    return ^{
+        NSString *IDCardNumber=self;
+        if (IDCardNumber.length <= 0) {
+            return NO;
+        }
+        NSString *regex2 = @"^(\\d{14}|\\d{17})(\\d|[xX])$";
+        NSPredicate *identityCardPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex2];
+        return [identityCardPredicate evaluateWithObject:IDCardNumber];
+    };
+    
+}
+
+- (BOOL(^)(void))IsBankCard{
+    return ^{
+        NSString *cardNumber=self;
+        if(cardNumber.length==0)
+        {
+            return NO;
+        }
+        NSString *digitsOnly = @"";
+        char c;
+        for (int i = 0; i < cardNumber.length; i++)
+        {
+            c = [cardNumber characterAtIndex:i];
+            if (isdigit(c))
+            {
+                digitsOnly =[digitsOnly stringByAppendingFormat:@"%c",c];
             }
         }
-        else {
-            addend = digit;
+        int sum = 0;
+        int digit = 0;
+        int addend = 0;
+        BOOL timesTwo = false;
+        for (NSInteger i = digitsOnly.length - 1; i >= 0; i--)
+        {
+            digit = [digitsOnly characterAtIndex:i] - '0';
+            if (timesTwo)
+            {
+                addend = digit * 2;
+                if (addend > 9) {
+                    addend -= 9;
+                }
+            }
+            else {
+                addend = digit;
+            }
+            sum += addend;
+            timesTwo = !timesTwo;
         }
-        sum += addend;
-        timesTwo = !timesTwo;
-    }
-    int modulus = sum % 10;
-    return modulus == 0;
+        int modulus = sum % 10;
+        if (modulus==0) {
+            return YES;
+        }else{
+            return NO;
+        }
+        
+    };
+    
 }
 
 - (NSString *(^)(void))ageFromIDCard {
