@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		223CA7EEC4683C417C65B2DC /* Pods_ZYExtension_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZYExtension_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		34807162D716C76B97131121 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		34807162D716C76B97131121 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		39486131538706AEFE3FA04D /* Pods-ZYExtension_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZYExtension_Example.debug.xcconfig"; path = "Target Support Files/Pods-ZYExtension_Example/Pods-ZYExtension_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* ZYExtension_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYExtension_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,10 +60,11 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		614615D4D93233D9D1A2391B /* Pods-ZYExtension_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZYExtension_Tests.release.xcconfig"; path = "Target Support Files/Pods-ZYExtension_Tests/Pods-ZYExtension_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		6637E982841F1BAD51378059 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		6637E982841F1BAD51378059 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AE86358763CA39D8AC64E253 /* ZYExtension.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ZYExtension.podspec; path = ../ZYExtension.podspec; sourceTree = "<group>"; };
+		AB56F9DD250A2BFB009C0781 /* UIView+ZYView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZYView.h"; sourceTree = "<group>"; };
+		AE86358763CA39D8AC64E253 /* ZYExtension.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZYExtension.podspec; path = ../ZYExtension.podspec; sourceTree = "<group>"; };
 		CA2286FAA7B2856EAC054B1E /* Pods-ZYExtension_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZYExtension_Example.release.xcconfig"; path = "Target Support Files/Pods-ZYExtension_Example/Pods-ZYExtension_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CB22B78568848943F741351E /* Pods_ZYExtension_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZYExtension_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2AD4B2241C966E7F146E091 /* Pods-ZYExtension_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZYExtension_Tests.debug.xcconfig"; path = "Target Support Files/Pods-ZYExtension_Tests/Pods-ZYExtension_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 		6003F593195388D20070C39A /* Example for ZYExtension */ = {
 			isa = PBXGroup;
 			children = (
+				AB56F9DD250A2BFB009C0781 /* UIView+ZYView.h */,
 				6003F59C195388D20070C39A /* ZYAppDelegate.h */,
 				6003F59D195388D20070C39A /* ZYAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -193,7 +195,6 @@
 				E2AD4B2241C966E7F146E091 /* Pods-ZYExtension_Tests.debug.xcconfig */,
 				614615D4D93233D9D1A2391B /* Pods-ZYExtension_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -259,6 +260,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

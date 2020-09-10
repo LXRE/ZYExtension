@@ -17,13 +17,14 @@
     self.view.addSubView(v1);
     
     UIButton *btn= UIButton.initWithType(UIButtonTypeSystem)
-                    .setTitle(@"测试",UIControlStateNormal)
-                    .addTarget(self,@selector(btnClick),UIControlEventTouchUpInside);
-    btn.setFrame(100,300,100,100)
+    .setTitle(@"测试",UIControlStateNormal)
+    .click(^(UIButton*btn){
+        NSLog(@"点击了");
+    });
+     btn.setFrame(100,300,100,100)
         .setBackgroundColor(UIColor.greenColor)
         .setBorderColor(UIColor.blackColor)
         .setBorderWidth(2);
-    self.view.addSubView(btn);
     
     //des加密
     NSString *dese=str.toDESEncryptForKey(@"11111");
@@ -51,6 +52,7 @@
     
     //是否是手机号
     BOOL isPhoneNum=str.IsPhoneNumber();
+    还有其他类的类别等等……
 ## Installation
 
 ```ruby

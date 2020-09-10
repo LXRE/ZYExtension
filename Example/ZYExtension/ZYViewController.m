@@ -51,7 +51,6 @@
     
     UIButton *btn= UIButton.initWithType(UIButtonTypeSystem)
     .setTitle(@"测试",UIControlStateNormal)
-    //.addTarget(self,@selector(btnClick),UIControlEventTouchUpInside);
     .click(^(UIButton*btn){
         NSLog(@"点击了");
     });
