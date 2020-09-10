@@ -13,4 +13,6 @@
 #import "UIView+ChainProgramming.h"
 #import "UILabel+ChainProgramming.h"
 #import "UIButton+ChainProgramming.h"
+#import "UIImageView+Category.h"
+#import "UIImage+Category.h"
 #endif /* Header_h */

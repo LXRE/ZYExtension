@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void (^btnBlock)(UIButton *);
 @interface UIButton (ChainProgramming)
 
 + (UIButton *(^)(UIButtonType buttonType))initWithType;
@@ -22,4 +22,6 @@
 
 - (UIButton *(^)(NSString *text, UIColor *color, UIFont *font, UIControlState state))setTitleAndTitleColor;
 
+/// 点击事件
+-(UIButton *(^)(btnBlock block))click;
 @end

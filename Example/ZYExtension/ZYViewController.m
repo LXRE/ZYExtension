@@ -34,11 +34,11 @@
     NSString *md5Str=str.toMD5ForLower32BateString();
    UIColor *color=UIColor.colorWithHexString(@"#ffffff");
     //是否是银行卡
-    BOOL isBankCard= str.IsBankCard();
+    BOOL isBankCard= str.isBankCard();
     //是否是Email
-    BOOL isEmail=str.IsEmailAdress();
+    BOOL isEmail=str.isEmailAdress();
     //是否是手机号
-    BOOL isPhoneNum=str.IsPhoneNumber();
+    BOOL isPhoneNum=str.isPhoneNumber();
     
     NSLog(@"dese:%@",dese);
     NSLog(@"desd:%@",desd);
@@ -51,13 +51,19 @@
     
     UIButton *btn= UIButton.initWithType(UIButtonTypeSystem)
     .setTitle(@"测试",UIControlStateNormal)
-    .addTarget(self,@selector(btnClick),UIControlEventTouchUpInside);
+    //.addTarget(self,@selector(btnClick),UIControlEventTouchUpInside);
+    .click(^(UIButton*btn){
+        
+        NSLog(@"点击了");
+    });
     btn.setFrame(100,300,100,100)
     .setBackgroundColor(UIColor.greenColor)
     .setBorderColor(UIColor.blackColor)
     .setBorderWidth(2);
     
     self.view.addSubView(btn);
+    
+    
 }
 -(void)btnClick{
     
@@ -68,5 +74,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+ 
 @end

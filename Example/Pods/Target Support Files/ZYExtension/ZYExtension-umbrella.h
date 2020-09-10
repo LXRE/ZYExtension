@@ -14,6 +14,8 @@
 #import "NSString+Category.h"
 #import "UIButton+ChainProgramming.h"
 #import "UIColor+Category.h"
+#import "UIImage+Category.h"
+#import "UIImageView+Category.h"
 #import "UILabel+ChainProgramming.h"
 #import "UIView+ChainProgramming.h"
 #import "ZYExtension.h"

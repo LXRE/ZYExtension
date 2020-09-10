@@ -7,7 +7,8 @@
 //
 
 #import "UIButton+ChainProgramming.h"
-
+#import <objc/runtime.h>
+static const char btnKey;
 @implementation UIButton (ChainProgramming)
 
 //button初始化方法一般使用它自己的枚举类型初始化
@@ -68,5 +69,23 @@
     };
     
 }
+-(UIButton *(^)(btnBlock block))click{
+    return ^(btnBlock block){
+        if (block)
+        {
+           //set方法将self和block通过btnkey关联起来
+            objc_setAssociatedObject(self, &btnKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
 
+        [self addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+        return self;
+        
+    };
+}
+- (void)btnAction:(UIButton *)btn
+{
+     //get方法通过key获取对象
+    btnBlock block = objc_getAssociatedObject(self, &btnKey);
+    block(self);
+}
 @end
