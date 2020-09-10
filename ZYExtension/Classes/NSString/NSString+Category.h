@@ -10,16 +10,16 @@
 
 @interface NSString (Category)
 ///BOOL 验证手机号是否正确(void)
-- (BOOL(^)(void))IsPhoneNumber;
+- (BOOL(^)(void))isPhoneNumber;
 
 /// BOOL 验证邮箱是否正确(void)
-- (BOOL(^)(void))IsEmailAdress;
+- (BOOL(^)(void))isEmailAdress;
 
 /// BOOL 验证身份证是否正确(void)
-- (BOOL(^)(void))IsIdentityCard;
+- (BOOL(^)(void))isIdentityCard;
 
 /// BOOL验证银行卡是否正确(void)
-- (BOOL(^)(void))IsBankCard;
+- (BOOL(^)(void))isBankCard;
 
 /// 根据身份证返回岁数
 - (NSString *(^)(void))ageFromIDCard;

@@ -11,7 +11,7 @@
 
 @implementation NSString (Category)
 
-- (BOOL(^)(void))IsPhoneNumber{
+- (BOOL(^)(void))isPhoneNumber{
     return ^{
         NSString *number=self;
         if (number.length != 11)
@@ -66,7 +66,7 @@
     
 }
 
-- (BOOL(^)(void))IsEmailAdress{
+- (BOOL(^)(void))isEmailAdress{
     return ^{
         NSString *emailCheck = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
         NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",emailCheck];
@@ -75,7 +75,7 @@
     
 }
 
-- (BOOL(^)(void))IsIdentityCard {
+- (BOOL(^)(void))isIdentityCard {
     return ^{
         NSString *IDCardNumber=self;
         if (IDCardNumber.length <= 0) {
@@ -88,7 +88,7 @@
     
 }
 
-- (BOOL(^)(void))IsBankCard{
+- (BOOL(^)(void))isBankCard{
     return ^{
         NSString *cardNumber=self;
         if(cardNumber.length==0)
