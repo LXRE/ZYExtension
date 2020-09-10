@@ -60,6 +60,7 @@
     .setBorderColor(UIColor.blackColor)
     .setBorderWidth(2);
     
+    
     self.view.addSubView(btn);
     
     UITextField *textFiled=UITextField.init.textFieldDidChanged(^(UITextField *textF){
