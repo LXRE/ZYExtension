@@ -27,20 +27,28 @@
     
     //des加密
     NSString *dese=str.toDESEncryptForKey(@"11111");
+    
     //des解密
     NSString *desd=dese.toDESDecryptForKey(@"11111");
+    
     //base64编码
     NSString *base64Str=str.toBase64String();
+    
     //base64解码
     NSString *base64DesStr=base64Str.base64ToString();
+    
     //md5 加密
     NSString *md5Str=str.toMD5ForLower32BateString();
+    
     //十六进制颜色
     UIColor *color=UIColor.colorWithHexString(@"#ffffff");
+    
     //是否是银行卡
     BOOL isBankCard= str.IsBankCard();
+    
     //是否是Email
     BOOL isEmail=str.IsEmailAdress();
+    
     //是否是手机号
     BOOL isPhoneNum=str.IsPhoneNumber();
 ## Installation
