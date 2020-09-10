@@ -1,7 +1,7 @@
 {
   "name": "ZYExtension",
-  "version": "0.1.0",
-  "summary": "A short description of ZYExtension.",
+  "version": "0.1.1",
+  "summary": "分类工具类和链式编程类",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/LXRE/ZYExtension",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/LXRE/ZYExtension.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "8.0"

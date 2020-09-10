@@ -9,11 +9,29 @@
               .setFrame(100,100,100,100)
               .setBackgroundColor(UIColor.blueColor);
     self.view.addSubView(v1);
+    
+    UIButton *btn= UIButton.initWithType(UIButtonTypeSystem)
+    .setTitle(@"测试",UIControlStateNormal)
+    .addTarget(self,@selector(btnClick),UIControlEventTouchUpInside);
+    btn.setFrame(100,300,100,100)
+    .setBackgroundColor(UIColor.greenColor)
+    .setBorderColor(UIColor.blackColor)
+    .setBorderWidth(2);
+    self.view.addSubView(btn);
+    
     //des加密
     NSString *dese=str.toDESEncryptForKey(@"11111");
     //des解密
     NSString *desd=dese.toDESDecryptForKey(@"11111");
-  
+    //base64编码
+    NSString *base64Str=str.toBase64String();
+    //base64解码
+    NSString *base64DesStr=base64Str.base64ToString();
+    //md5 加密
+    NSString *md5Str=str.toMD5ForLower32BateString();
+    //十六进制颜色
+    UIColor *color=UIColor.colorWithHexString(@"#ffffff");
+    
 ## Installation
 
 ```ruby

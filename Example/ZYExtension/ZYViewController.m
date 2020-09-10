@@ -20,12 +20,20 @@
 	// Do any additional setup after loading the view, typically from a nib.
 
     UIView *v=[[UIView alloc]initWithFrame:CGRectMake(20, 200, 100, 100)];
-    v.backgroundColor=[UIColor colorWithHexString:@"#000000" alpha:1];
+    v.backgroundColor=UIColor.colorWithHexString(@"#000045");
     
     [self.view addSubview:v];
     NSString *str=@"12312414324233242345";
     NSString *dese=str.toDESEncryptForKey(@"11111");
     NSString *desd=dese.toDESDecryptForKey(@"11111");
+    //base64编码
+    NSString *base64Str=str.toBase64String();
+    //base64解码
+    NSString *base64DesStr=base64Str.base64ToString();
+    //md5 加密
+    NSString *md5Str=str.toMD5ForLower32BateString();
+   UIColor *color=UIColor.colorWithHexString(@"#ffffff");
+    
     NSLog(@"dese:%@",dese);
     NSLog(@"desd:%@",desd);
     UIView *v1=UIView.init.setBorderWidth(2)

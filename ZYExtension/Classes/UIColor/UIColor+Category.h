@@ -11,14 +11,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor (Category)
 
-/// 十六进制颜色
-/// @param color 参数 如 @“#213214” 或@“0x213434”
-+(UIColor *)colorWithHexString:(NSString *)color;
+/// 十六进制颜色  如 @“#213214” 或@“0x213434”
++(UIColor *(^)(NSString *color))colorWithHexString;
 
 /// 带有透明度的颜色，十六进制封装
-/// @param color 颜色
-/// @param alpha 透明度
-+(UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha;
++(UIColor *(^)(NSString *color,CGFloat alpha))colorWithHexStringAndAlpha;
 @end
 
 NS_ASSUME_NONNULL_END
