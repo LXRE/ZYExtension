@@ -11,12 +11,12 @@
     self.view.addSubView(v1);
     
     UIButton *btn= UIButton.initWithType(UIButtonTypeSystem)
-    .setTitle(@"测试",UIControlStateNormal)
-    .addTarget(self,@selector(btnClick),UIControlEventTouchUpInside);
+                    .setTitle(@"测试",UIControlStateNormal)
+                    .addTarget(self,@selector(btnClick),UIControlEventTouchUpInside);
     btn.setFrame(100,300,100,100)
-    .setBackgroundColor(UIColor.greenColor)
-    .setBorderColor(UIColor.blackColor)
-    .setBorderWidth(2);
+        .setBackgroundColor(UIColor.greenColor)
+        .setBorderColor(UIColor.blackColor)
+        .setBorderWidth(2);
     self.view.addSubView(btn);
     
     //des加密
