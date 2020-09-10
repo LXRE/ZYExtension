@@ -69,8 +69,8 @@ static const char btnKey;
     };
     
 }
--(UIButton *(^)(btnBlock block))click{
-    return ^(btnBlock block){
+-(UIButton *(^)(BtnBlock block))click{
+    return ^(BtnBlock block){
         if (block)
         {
            //set方法将self和block通过btnkey关联起来
@@ -85,7 +85,7 @@ static const char btnKey;
 - (void)btnAction:(UIButton *)btn
 {
      //get方法通过key获取对象
-    btnBlock block = objc_getAssociatedObject(self, &btnKey);
+    BtnBlock block = objc_getAssociatedObject(self, &btnKey);
     block(self);
 }
 @end

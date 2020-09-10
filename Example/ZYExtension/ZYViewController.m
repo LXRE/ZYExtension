@@ -53,7 +53,6 @@
     .setTitle(@"测试",UIControlStateNormal)
     //.addTarget(self,@selector(btnClick),UIControlEventTouchUpInside);
     .click(^(UIButton*btn){
-        
         NSLog(@"点击了");
     });
     btn.setFrame(100,300,100,100)
@@ -62,6 +61,14 @@
     .setBorderWidth(2);
     
     self.view.addSubView(btn);
+    
+    UITextField *textFiled=UITextField.init.textFieldDidChanged(^(UITextField *textF){
+        
+        NSLog(@"%@",textF.text);
+    });
+    textFiled.setFrame(150,200,100,20).setBorderWidth(1).setBorderColor(UIColor.blackColor);
+    
+    self.view.addSubView(textFiled);
     
     
 }

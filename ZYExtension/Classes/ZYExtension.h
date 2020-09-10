@@ -15,4 +15,5 @@
 #import "UIButton+ChainProgramming.h"
 #import "UIImageView+Category.h"
 #import "UIImage+Category.h"
+#import "UITextField+Category.h"
 #endif /* Header_h */

@@ -16,8 +16,10 @@
 
 @implementation UIView (ChainProgramming)
 
-+ (instancetype )init
++ (instancetype)init
 {
+    
+    NSLog(@"class:%@",NSStringFromClass([self class]));
     return [[[self class] alloc] init];
 }
 

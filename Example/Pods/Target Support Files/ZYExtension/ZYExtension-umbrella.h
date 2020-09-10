@@ -17,6 +17,7 @@
 #import "UIImage+Category.h"
 #import "UIImageView+Category.h"
 #import "UILabel+ChainProgramming.h"
+#import "UITextField+Category.h"
 #import "UIView+ChainProgramming.h"
 #import "ZYExtension.h"
 
