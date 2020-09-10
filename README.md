@@ -5,6 +5,7 @@
 2.时间格式化;
 3.常用编解码 base64,md5,des加解密，判断手机号、email;
 4.颜色类别，十六进制颜色;
+5.UIImage、UIImageView、UITextFiled等常用类别
 ```
 
 ## Example
