@@ -53,6 +53,8 @@
     
     //是否是手机号
     BOOL isPhoneNum=str.IsPhoneNumber();
+    
+    
     还有其他类的类别等等……
 ## Installation
 
