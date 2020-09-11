@@ -16,4 +16,7 @@
 #import "UIImageView+Category.h"
 #import "UIImage+Category.h"
 #import "UITextField+Category.h"
+#import "UITableView+Category.h"
+#import "UITableViewCell+Category.h"
+#import "TableViewDataSource.h"
 #endif /* Header_h */

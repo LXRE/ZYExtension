@@ -71,6 +71,15 @@
     self.view.addSubView(textFiled);
     
     
+    UITableView *tableView=UITableView.init;
+    tableView.setDataSource([[TableViewDataSource alloc]initWithNumberOfRowsInSection:^NSInteger(UITableView * _Nonnull tableView, NSInteger section) {
+        return 1;
+    } withCellForRowAtIndexPath:^UITableViewCell * _Nonnull(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
+        return tableView.dequeueReusableCellWithIdentifier(@"");
+    }]);
+    
+
+    
 }
 -(void)btnClick{
     
