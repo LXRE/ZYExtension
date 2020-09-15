@@ -54,8 +54,27 @@
     //是否是手机号
     BOOL isPhoneNum=str.IsPhoneNumber();
     
+     tableView.dataSource=TableViewDataSource.init
+    .numberOfRowsInSection(^NSInteger(UITableView *tableView,NSInteger section){
+        return 111;
+    })
+    .cellForRowAtIndexPath(^UITableViewCell*(UITableView *tableView,NSIndexPath *indexPath){
+        return tableView.dequeueReusableCellWithIdentifier(@"123");
+    })
+    .titleForHeaderInSection(^NSString*(UITableView *tableView,NSInteger section){
+        return @"123";
+    })
+    .titleForFooterInSection(^NSString*(UITableView *tableView,NSInteger section){
+        return @"q3ada";
+    });
     
-    还有其他类的类别等等……
+    tableView.delegate=TableviewDelegate.init
+    .heightForRowAtIndexPath(^CGFloat(UITableView *tableView,NSIndexPath *indexPath){
+        return 11;
+    })
+    .didSelectRowAtIndexPath(^(UITableView *tableView,NSIndexPath *indexPath){
+        
+    });
 ## Installation
 
 ```ruby
