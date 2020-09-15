@@ -72,11 +72,27 @@
     
     
     UITableView *tableView=UITableView.init;
-    tableView.setDataSource([[TableViewDataSource alloc]initWithNumberOfRowsInSection:^NSInteger(UITableView * _Nonnull tableView, NSInteger section) {
-        return 1;
-    } withCellForRowAtIndexPath:^UITableViewCell * _Nonnull(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
-        return tableView.dequeueReusableCellWithIdentifier(@"");
-    }]);
+    tableView.dataSource=TableViewDataSource.init
+    .numberOfRowsInSection(^NSInteger(UITableView *tableView,NSInteger section){
+        return 111;
+    })
+    .cellForRowAtIndexPath(^UITableViewCell*(UITableView *tableView,NSIndexPath *indexPath){
+        return tableView.dequeueReusableCellWithIdentifier(@"123");
+    })
+    .titleForHeaderInSection(^NSString*(UITableView *tableView,NSInteger section){
+        return @"123";
+    })
+    .titleForFooterInSection(^NSString*(UITableView *tableView,NSInteger section){
+        return @"q3ada";
+    });
+    
+    tableView.delegate=TableviewDelegate.init
+    .heightForRowAtIndexPath(^CGFloat(UITableView *tableView,NSIndexPath *indexPath){
+        return 11;
+    })
+    .didSelectRowAtIndexPath(^(UITableView *tableView,NSIndexPath *indexPath){
+        
+    });
     
 
     

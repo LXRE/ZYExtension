@@ -18,6 +18,7 @@
 #import "UIImageView+Category.h"
 #import "UILabel+ChainProgramming.h"
 #import "TableViewDataSource.h"
+#import "TableviewDelegate.h"
 #import "UITableView+Category.h"
 #import "UITableViewCell+Category.h"
 #import "UITextField+Category.h"
