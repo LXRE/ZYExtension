@@ -14,6 +14,8 @@ typedef UITableViewCell* _Nonnull (^CellForRowAtIndexPath)(UITableView *tableVie
 
 @property(nonatomic, copy) NumberOfRowsInSectionBlock numberOfRowsInSectionBlock;
 @property(nonatomic, copy) CellForRowAtIndexPath cellForRowAtIndexPathBlock;
+
+///初始化
 -(instancetype)initWithNumberOfRowsInSection:(NumberOfRowsInSectionBlock)block withCellForRowAtIndexPath:(CellForRowAtIndexPath)block1;
 
 
