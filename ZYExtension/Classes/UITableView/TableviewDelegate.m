@@ -65,4 +65,58 @@
         return self;
     };
 }
+- (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath{
+    return self.shouldIndentWhileEditingRowAtIndexPathBlock(tableView,indexPath);
+}
+-(TableviewDelegate*(^)(ShouldIndentWhileEditingRowAtIndexPathBlock block))shouldIndentWhileEditingRowAtIndexPath{
+    return ^(ShouldIndentWhileEditingRowAtIndexPathBlock block){
+        self.shouldIndentWhileEditingRowAtIndexPathBlock=block;
+        return self;
+    };
+}
+- (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath{
+    return self.willBeginEditingRowAtIndexPathBlock(tableView,indexPath);
+}
+-(TableviewDelegate*(^)(WillBeginEditingRowAtIndexPathBlock block))willBeginEditingRowAtIndexPath{
+    return ^(WillBeginEditingRowAtIndexPathBlock block){
+        self.willBeginEditingRowAtIndexPathBlock=block;
+        return self;
+    };
+}
+- (void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(nullable NSIndexPath *)indexPath{
+    return self.didEndEditingRowAtIndexPathBlock(tableView,indexPath);
+}
+-(TableviewDelegate*(^)(DidEndEditingRowAtIndexPathBlock block))didEndEditingRowAtIndexPath{
+    return ^(DidEndEditingRowAtIndexPathBlock block){
+           self.didEndEditingRowAtIndexPathBlock=block;
+           return self;
+       };
+}
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return self.editingStyleForRowAtIndexPathBlock(tableView,indexPath);
+}
+-(TableviewDelegate*(^)(EditingStyleForRowAtIndexPathBlock block))editingStyleForRowAtIndexPath{
+    return ^(EditingStyleForRowAtIndexPathBlock block){
+              self.editingStyleForRowAtIndexPathBlock=block;
+              return self;
+          };
+}
+- (nullable UITableViewHeaderFooterView *)headerViewForSection:(NSInteger)section{
+    return self.headerViewForSectionBlock(section);
+}
+-(TableviewDelegate*(^)(HeaderViewForSectionBlock block))headerViewForSection{
+    return ^(HeaderViewForSectionBlock block){
+        self.headerViewForSectionBlock=block;
+        return self;
+    };
+}
+- (nullable UITableViewHeaderFooterView *)footerViewForSection:(NSInteger)section{
+    return self.footerViewForSectionBlock(section);
+}
+-(TableviewDelegate*(^)(FooterViewForSectionBlock block))footerViewForSection{
+    return ^(FooterViewForSectionBlock block){
+        self.footerViewForSectionBlock=block;
+        return self;
+    };
+}
 @end

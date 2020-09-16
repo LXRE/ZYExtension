@@ -92,6 +92,12 @@
     })
     .didSelectRowAtIndexPath(^(UITableView *tableView,NSIndexPath *indexPath){
         
+    })
+    .heightForRowAtIndexPath(^CGFloat(UITableView *tableView,NSIndexPath *indexPath){
+        return 22;
+    })
+    .viewForFooterInSection(^UIView*(UITableView *tableView,NSInteger section){
+        return [[UIView alloc]init];
     });
     
 
