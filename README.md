@@ -53,7 +53,7 @@
     
     //是否是手机号
     BOOL isPhoneNum=str.IsPhoneNumber();
-    
+    //TableViewDataSource类整合
      tableView.dataSource=TableViewDataSource.init
     .numberOfRowsInSection(^NSInteger(UITableView *tableView,NSInteger section){
         return 111;
@@ -67,7 +67,7 @@
     .titleForFooterInSection(^NSString*(UITableView *tableView,NSInteger section){
         return @"q3ada";
     });
-    
+    //代理类整合
     tableView.delegate=TableviewDelegate.init
     .heightForRowAtIndexPath(^CGFloat(UITableView *tableView,NSIndexPath *indexPath){
         return 11;
